@@ -1,3 +1,4 @@
+require 'fileutils'
 require 'rack/mem_prof'
 require 'test/unit'
 require 'rack/test'
@@ -16,10 +17,13 @@ class RackMemProfTest < Test::Unit::TestCase
 
   def test_report_created
     self.app = Rack::MemProf::Middleware.new(DummyApp.freeze.app)
+
     MemoryProfiler.expects(:start).once
     MemoryProfiler.expects(:stop).once
     app.expects(:write_report).once
+
     get '/'
+
     assert last_response.ok?
   end
 end

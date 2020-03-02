@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'test-unit', '~> 3.3'
   spec.add_development_dependency 'roda', '~> 3.29'
   spec.add_development_dependency 'mocha', '~> 1.11'
-  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'pry-byebug'
 end
 
 
